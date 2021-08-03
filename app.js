@@ -9,6 +9,7 @@ const db = require('./config/db');
 // Set static folder
 app.use(express.static("client/dist"));
 
+console.log('Environment*** ::',process.env.NODE_ENV);
 // Serve static assets in production
 // if (process.env.NODE_ENV === "production") {
   app.get("*", (req, res) => {

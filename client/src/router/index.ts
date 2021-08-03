@@ -13,8 +13,8 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Home',
     component: Home,
     props: {
-      msg:"Welcome to Your Vue.js + TypeScript App", 
-      info:"This your first time working with vue js"
+      msg:"Assignment Vue.js", 
+      info:"Create a login and signup functionality"
     }
   },
   {

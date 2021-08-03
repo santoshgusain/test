@@ -11,18 +11,18 @@
           <div class="col-xs-6 col-md-3">
             <h6>Categories</h6>
             <ul class="footer-links">
-              <li><a href="http://scanfcode.com/category/c-language/">Home</a></li>
-              <li><a href="http://scanfcode.com/category/front-end-development/">Careers</a></li>
+              <li><router-link :to="{name:'Home'}">Home</router-link></li>
+              <li><a href="javascript:void(0)">Careers</a></li>
             </ul>
           </div>
 
           <div class="col-xs-6 col-md-3">
             <h6>Quick Links</h6>
             <ul class="footer-links">
-              <li><a href="http://scanfcode.com/about/">About Us</a></li>
-              <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
-              <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
-              <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+              <li><router-link :to="{name:'Login'}">Login</router-link></li>
+              <li><router-link :to="{name:'SignUp'}">SignUp</router-link></li>
+              <li><a href="javascript:void(0)">Contact Us</a></li>
+              <li><a href="javascript:void(0)">Sitemap</a></li>
             </ul>
           </div>
         </div>
@@ -32,7 +32,7 @@
         <div class="row">
           <div class="col-md-8 col-sm-6 col-xs-12 m-auto">
             <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by 
-            <a href="#">Scanfcode</a>.
+            <a href="javascript:void(0)">Santosh</a>.
             </p>
           </div>
         </div>
