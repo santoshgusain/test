@@ -5,9 +5,16 @@ const db = require('./config/db');
 // console.log(db)
 
 
-app.get('/',(req,res)=>{
-    res.send('you are set up successfully');
-})
+
+// Set static folder
+app.use(express.static("client/dist"));
+
+// Serve static assets in production
+// if (process.env.NODE_ENV === "production") {
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
+  });
+// }
 
 app.listen(PORT, (err)=>{
     if (err)
