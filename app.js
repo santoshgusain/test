@@ -1,12 +1,12 @@
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 const db = require('./config/db');
 // console.log(db)
 
 
 app.get('/',(req,res)=>{
-    res.send('you are set up successfully')
+    res.send('you are set up successfully');
 })
 
 app.listen(PORT, (err)=>{
