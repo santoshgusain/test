@@ -1,5 +1,14 @@
 <template>
-  <div class="login-form">
+  <div class="login-form mt-2">
+    <div v-if='error' class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>Invalid Credentials!</strong> Please login with valid credentials
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
     <div class="login-main card">
       <form>
         <div class="card-header">
@@ -13,6 +22,7 @@
               class="form-control"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
+              v-model="form.email"
             />
           </div>
           <div class="col-md-12">
@@ -21,10 +31,15 @@
               type="password"
               class="form-control"
               id="exampleInputPassword1"
+              v-model="form.password"
             />
           </div>
           <div class="col-md-12">
-            <button type="submit" class="btn btn-primary rounded-0 w-100">
+            <button
+              v-on:click="login"
+              type="submit"
+              class="btn btn-primary rounded-0 w-100"
+            >
               Login
             </button>
           </div>

@@ -6,6 +6,7 @@ import "../../node_modules/jquery/dist/jquery.js";
 import Home from '../page/Home/home.vue';
 import Login from '../page/Login/login.vue';
 import SignUp from '../page/SignUp/signup.vue';
+import Dashboard from '../page/Dashboard/dashboard.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -21,6 +22,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/login',
     name: 'Login',
     component: Login
+  },
+  {
+    path: '/dashboard',
+    name: 'Dashboard',
+    component: Dashboard
   },
   {
     path: '/signup',

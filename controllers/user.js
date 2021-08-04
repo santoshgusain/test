@@ -1,6 +1,6 @@
 const Sequelize = require('sequelize');
 
-const dbname='assignment';
+const dbname='rubico';
 const uname='santosh';
 const password='password';
 const props = {
