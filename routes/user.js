@@ -3,6 +3,7 @@ const session = require('express-session');
 const router  = express.Router();
 const { validationResult } = require("express-validator");
 const { userValidation, loginValidation } = require("../middleware/validation");
+const auth = require("../middleware/auth");
 const {
   registerUser,
   userLogin,
@@ -37,7 +38,7 @@ router.post("/login", loginValidation(), (req, res) => {
 
 // user logout
 router.post("/logout", async (req, res) => {
-  const status = await req.session.destroy();
+  await req.session.destroy();
   res.json({logout:true} );
 });
 

@@ -10,6 +10,7 @@
             class="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
+            v-model="firstName"
           />
         </div>
         <div class="col-md-6">
@@ -19,6 +20,7 @@
             class="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
+            v-model="lastName"
           />
         </div>
         <div class="col-md-12">
@@ -28,15 +30,8 @@
             class="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
+            v-model="email"
           />
-        </div>
-        <div class="col-md-12">
-          <label for="exampleFormControlTextarea1">Address</label>
-          <textarea
-            class="form-control"
-            id="exampleFormControlTextarea1"
-            rows="3"
-          ></textarea>
         </div>
         <div class="col-md-12">
           <label for="exampleInputPassword1">Password</label>
@@ -44,6 +39,7 @@
             type="password"
             class="form-control"
             id="exampleInputPassword1"
+            v-model="password"
           />
         </div>
         <div class="col-md-12">
@@ -55,7 +51,7 @@
           />
         </div>
         <div class="col-md-12">
-          <button type="submit" class="btn btn-primary">SignUp</button>
+          <button @click="registerUser" type="submit" class="btn btn-primary">SignUp</button>
         </div>
       </div>
     </form>

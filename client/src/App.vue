@@ -1,7 +1,7 @@
 <template>
   <div id="nav">
     <Header/>
-    <router-view />
+    <router-view v-bind="isLogin" />
     <Footer/>
   </div>
 </template>
@@ -18,7 +18,9 @@ import Header from "./components/Header/header.vue";
     Header
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+
+}
 </script>
 
 <style>

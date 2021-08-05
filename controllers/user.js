@@ -1,6 +1,8 @@
 
 const {User} = require("../models");
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const config = require('config');
 
 
 exports.registerUser = async (req, res) => {
@@ -14,17 +16,15 @@ exports.registerUser = async (req, res) => {
     // set data to be saved 
     let data    = {firstName, lastName, email, password:passwordHash};
     const user  = await User.create(data);
-    res.json(user);
+    res.json({status:'success',data:user});
   } catch (err) {
     console.error(err);
-    res.status(400).send(err.message);
+    res.status(400).json({status:'error',msg:err.message});
   }
 };
 
 exports.userLogin = async (req, res) => {
   try {
-    
-    console.log('User',User);
         const {password, email} = req.body;
         // fetch detail of the user using email id
         let user =  await User.findOne({
@@ -41,12 +41,25 @@ exports.userLogin = async (req, res) => {
         let isLogin = await bcrypt.compare(password,passwordHash);
         // send response accordingly
         if( isLogin ){
-
-          delete user.password;
+          
           delete user.createdAt;
           delete user.updatedAt;
-          req.session.user = user;
-          res.json({status:'success',data:req.session.user});
+          delete user.password;
+          delete user.accessToken;
+          let response = {...user};
+          delete user.email;
+          delete user.lastName;
+          delete user.firstName;
+          // generate jwt token
+          let token = await jwt.sign({
+            data: user
+          }, config.get("jwt-secret"), { expiresIn: '1h' });
+
+          // update jwt token
+          response.accessToken = token;
+          let updateStatus = await User.update({accessToken:token},{ where :{id:user.id} });
+          console.log(user);
+          res.json({status:'success',data:response});
         }else{
           res.json({status:'error',msg:'Invalid Credential'});
           return;
