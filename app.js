@@ -19,7 +19,8 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 app.listen(PORT, (err)=>{
-    if (err)
-        return console.log('Error occured');
+    if (err){
+      return console.log('Error occured');
+    }
     console.log('Server is running on PORT : ',PORT);
 })
