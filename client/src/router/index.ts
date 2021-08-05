@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../../node_modules/jquery/dist/jquery.js";
+import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
 
 // import Home from '../views/Home.vue'
 import Home from '../page/Home/home.vue';
