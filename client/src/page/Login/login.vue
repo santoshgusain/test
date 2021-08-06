@@ -12,7 +12,7 @@
     <div class="login-main card">
       <form>
         <div class="card-header">
-          <h2 class="mt-5 text-center">MansaInfoTech</h2>
+          <h2 class="mt-5 text-center">MansaInfoTech{{this.$store.state.counting}}</h2>
         </div>
         <div class="row card-body">
           <div class="col-md-12">

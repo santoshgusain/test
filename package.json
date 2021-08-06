@@ -26,6 +26,8 @@
     "sequelize": "^6.6.5"
   },
   "devDependencies": {
+    "faker": "^5.5.3",
+    "gulp": "^4.0.2",
     "sequelize-cli": "^6.2.0"
   }
 }

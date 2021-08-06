@@ -20,9 +20,7 @@ import Header from "./components/Header/header.vue";
   },
 })
 export default class App extends Vue {
- created(){
-  //  console.log(store.state);
- }
+
 
 }
 </script>

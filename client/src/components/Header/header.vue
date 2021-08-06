@@ -24,9 +24,6 @@
           <li v-if="loggedIn" class="nav-item">
             <router-link :to="{name:'Dashboard'}">Dashboard</router-link>
           </li>
-          <li>
-            {{count}}
-          </li>
         </ul>
       </div>
     </div>
