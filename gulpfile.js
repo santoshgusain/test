@@ -1,5 +1,10 @@
 const gulp = require('gulp');
 /* Adding Task */ 
 gulp.task('test-task',()=>{
-   return console.log('task has been created successfully')
+   try{
+
+      return console.log('task has been created successfully');
+   }catch(err){
+      console.log('error');
+   }
 });
