@@ -1,7 +1,6 @@
 <template>
   <div id="nav">
     <Header/>
-    <button @click="increment">increment</button>
     <router-view v-bind="isLogin" />
     <Footer/>
   </div>
@@ -20,7 +19,6 @@ import Header from "./components/Header/header.vue";
   },
 })
 export default class App extends Vue {
-
 
 }
 </script>
