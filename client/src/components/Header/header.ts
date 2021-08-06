@@ -1,5 +1,6 @@
 import { Options, Vue } from 'vue-class-component';
 
+
 @Options({
   props: {
     msg: String,
@@ -9,6 +10,7 @@ import { Options, Vue } from 'vue-class-component';
 export default class Header extends Vue {
   msg!: string;
   loggedIn = false;
+  count = 0
   created(){
      // check if user is not logged in alreay
      console.log('header created');
@@ -19,4 +21,5 @@ export default class Header extends Vue {
        this.loggedIn = false;
      }
   }
+
 }
